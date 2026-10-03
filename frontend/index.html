@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c1110">
+    <meta name="description" content="Learn video editing through practical, step-by-step courses for the tools creators use every day.">
+    <title>EditMaster — Learn to edit with intention</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body class="home-page">
+    <div class="login-overlay" id="loginPopup">
+        <div class="login-box">
+            <button class="close-btn" onclick="closeLogin()" aria-label="Close sign in">×</button>
+            <div class="modal-mark" aria-hidden="true">E</div>
+            <p class="eyebrow">YOUR CREATOR JOURNEY STARTS HERE</p>
+            <h2 id="authTitle">Welcome Back</h2>
+            <p class="subtitle" id="authSubtitle">Sign in to continue learning.</p>
+            <form onsubmit="login(event)">
+                <div class="input-group" id="nameGroup" hidden>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name" autocomplete="name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="At least 8 characters" autocomplete="current-password" minlength="8" required>
+                </div>
+                <div class="options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <span>Secure sign in</span>
+                </div>
+                <button type="submit" class="login-btn" id="authSubmit">Sign in</button>
+                <p id="authMessage" role="alert" aria-live="polite"></p>
+            </form>
+            <p class="signup"><span id="authPrompt">New to EditMaster? </span><a href="#" id="authToggle" onclick="toggleAuthMode(event)">Create an account</a></p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a class="logo" href="index.html" aria-label="EditMaster home"><span class="brand-glyph">E</span><span>EditMaster</span></a>
+        <div class="nav-links">
+            <a href="#software">Courses</a>
+            <a href="#path">Learning path</a>
+            <a href="#about">About</a>
+        </div>
+        <a class="profile-btn" href="dashboard.html">My dashboard <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="badge"><span class="status-dot"></span> A better way to learn video editing</span>
+                    <h1>Make videos<br>that feel <span>impossible<br>to skip.</span></h1>
+                    <p>Build real editing skills with clear lessons, practical workflows, and the tools you already want to master.</p>
+                    <div class="hero-buttons">
+                        <a class="start-btn" href="#software">Find your course <span aria-hidden="true">↗</span></a>
+                        <a class="explore-btn" href="#path">See how it works <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <div class="hero-note"><span class="note-line"></span> Learn at your pace. Make it your style.</div>
+                </div>
+                <div class="hero-visual" aria-label="Illustration of a video editing timeline" role="img">
+                    <div class="studio-window">
+                        <div class="studio-top"><span class="window-dots"><i></i><i></i><i></i></span><span>EDITMASTER / WORKSPACE</span><span class="live-label">● READY</span></div>
+                        <div class="studio-screen"><div class="screen-glow"></div><span class="screen-kicker">FRAME 024 — 00:08</span><span class="play-mark">▶</span><span class="screen-caption">Find your<br>own rhythm.</span><span class="screen-index">01 / 04</span></div>
+                        <div class="timeline-head"><span>SEQUENCE 01</span><span>00:00:08:24</span></div>
+                        <div class="timeline-ruler"><span>00:00</span><span>00:04</span><span>00:08</span><span>00:12</span><span>00:16</span></div>
+                        <div class="timeline-track"><b class="clip clip-one"></b><b class="clip clip-two"></b><b class="clip clip-three"></b></div>
+                        <div class="audio-track"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div>
+                    </div>
+                    <div class="floating-note"><span class="note-icon">✳</span><span><small>YOUR NEXT SKILL</small><strong>Story-first editing</strong></span><span class="note-arrow">↗</span></div>
+                </div>
+            </div>
+            <div class="hero-index" aria-hidden="true">01 <span></span> 04</div>
+        </section>
+
+        <section class="software-section" id="software">
+            <div class="section-heading section-heading-row">
+                <div><span class="eyebrow">THE TOOLKIT</span><h2>Choose your editing suite.</h2></div>
+                <p>Start with the software you use—or the one you’ve been meaning to try.</p>
+            </div>
+            <div class="course-filters"><label class="sr-only" for="course-search">Search videos and courses</label><input id="course-search" type="search" placeholder="Search every lesson and video…"><label class="sr-only" for="course-level">Filter by level</label><select id="course-level"><option value="all">All levels</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><span id="course-count" aria-live="polite">4 courses</span></div>
+            <div class="software-grid">
+                <article class="software-card capcut-mobile" data-course-level="beginner">
+                    <div class="card-icon"><img src="Capcut-pc.jpg" alt="CapCut Mobile"></div>
+                    <div class="card-content"><span class="level">01 / MOBILE EDITING</span><h3>CapCut Mobile</h3><p>Create polished edits right from your phone, from your first cut to the final export.</p><div class="card-info"><span>15+ lessons</span><span>Beginner friendly</span></div><a class="course-link" href="capcut-mobile.html">Explore course <span>↗</span></a></div>
+                </article>
+                <article class="software-card capcut-pc" data-course-level="beginner">
+                    <div class="card-icon"><img src="Capcut-pc.jpg" alt="CapCut PC"></div>
+                    <div class="card-content"><span class="level">02 / DESKTOP EDITING</span><h3>CapCut Desktop</h3><p>Shape a faster desktop workflow with confident cuts, transitions, and effects.</p><div class="card-info"><span>10+ lessons</span><span>Beginner to intermediate</span></div><a class="course-link" href="capcut-pc.html">Explore course <span>↗</span></a></div>
+                </article>
+                <article class="software-card premiere-card" data-course-level="intermediate">
+                    <div class="card-icon"><img src="adobe-premiere.png" alt="Adobe Premiere Pro"></div>
+                    <div class="card-content"><span class="level">03 / PRODUCTION</span><h3>Premiere Pro</h3><p>Learn the foundations of professional editing, audio, color, and delivery.</p><div class="card-info"><span>18 lessons</span><span>All skill levels</span></div><a class="course-link" href="premiere-pro.html">Explore course <span>↗</span></a></div>
+                </article>
+                <article class="software-card after-effects" data-course-level="advanced">
+                    <div class="card-icon"><img src="after-effect.png" alt="Adobe After Effects"></div>
+                    <div class="card-content"><span class="level">04 / MOTION DESIGN</span><h3>After Effects</h3><p>Bring ideas to life with motion graphics, animation, and visual effects.</p><div class="card-info"><span>17+ lessons</span><span>Beginner to advanced</span></div><a class="course-link" href="after-effects.html">Explore course <span>↗</span></a></div>
+                </article>
+            </div>
+            <div class="video-search-results" id="video-search-results" hidden aria-live="polite"></div>
+        </section>
+
+        <section class="path-section" id="path">
+            <div class="section-heading"><span class="eyebrow">A CLEAR WAY FORWARD</span><h2>Learn the craft, one layer at a time.</h2><p>Every great edit starts with a strong foundation. Build yours step by step.</p></div>
+            <div class="level-grid">
+                <article class="level-card">
+                    <span class="path-number">01</span>
+                    <div class="level-image"><img src="biggner.jfif" alt="">
+                    </div><span class="path-label">THE FOUNDATION</span>
+                    <h3>Start with the basics</h3>
+                    <p>Get comfortable with your tools, timeline, and first clean cuts.</p>
+                </article>
+                <article class="level-card">
+                    <span class="path-number">02</span>
+                    <div class="level-image"><img src="intermidate.jfif" alt=""></div>
+                    <span class="path-label">FIND YOUR FLOW</span>
+                    <h3>Build your workflow</h3>
+                    <p>Develop pacing, sound, color, and a process you can repeat.</p>
+                </article>
+                <article class="level-card">
+                    <span class="path-number">03</span>
+                    <div class="level-image"><img src="advance.png" alt=""></div>
+                    <span class="path-label">MAKE IT YOURS</span>
+                    <h3>Refine your signature</h3>
+                    <p>Use advanced techniques to create work that feels distinctively yours.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-strip" id="about"><span class="about-mark">E</span><div><span class="eyebrow">MADE FOR THE MAKERS</span><h2>Good editing is a feeling.<br>Learn how to create it.</h2></div><a href="#software">Start learning <span>↗</span></a></section>
+    </main>
+
+    <footer><a class="logo" href="index.html"><span class="brand-glyph">E</span><span>EditMaster</span></a><p>Learn the tools. Tell better stories.</p><span class="copyright">© EditMaster</span></footer>
+    <script src="api-client.js"></script>
+    <script src="script.js"></script>
+    <script src="site-footer.js"></script>
+</body>
+</html>

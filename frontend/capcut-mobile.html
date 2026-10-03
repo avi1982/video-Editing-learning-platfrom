@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CapCut Mobile - EditMaster</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* CapCut Page */
+
+        .learning-page {
+            padding: 60px 7%;
+        }
+
+        .back-button {
+            display: inline-block;
+            color: #aab4ff;
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .learning-header {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .learning-header .tag {
+            color: #7185e8;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .learning-header h1 {
+            font-size: 50px;
+            margin: 12px 0;
+        }
+
+        .learning-header p {
+            color: #9299aa;
+            line-height: 1.7;
+        }
+
+        /* Progress */
+
+        .progress-box {
+            background: #111625;
+            border: 1px solid #272e40;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 50px;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #252b3b;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #7185e8;
+        }
+
+        /* Lessons */
+
+        .lesson-section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-description {
+            color: #858c9d;
+            margin-top: -10px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .lesson-card {
+            background: #101522;
+            border: 1px solid #272e40;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #05070c;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .lesson-info {
+            padding: 20px;
+        }
+
+        .lesson-number {
+            color: #7185e8;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .lesson-info h3 {
+            margin: 8px 0;
+            font-size: 19px;
+        }
+
+        .lesson-info p {
+            color: #858c9d;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .lesson-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 11px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 900px) {
+
+            .lesson-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .learning-page {
+                padding: 40px 20px;
+            }
+
+            .learning-header h1 {
+                font-size: 38px;
+            }
+
+            .lesson-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            EditMaster
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#software">
+                Software
+            </a>
+
+        </div>
+
+        <button class="profile-btn">
+            Profile
+        </button>
+
+    </nav>
+
+
+
+    <!-- LEARNING PAGE -->
+
+    <main class="learning-page">
+
+
+        <a href="index.html" class="back-button">
+
+            ← Back to Software
+
+        </a>
+
+
+        <!-- HEADER -->
+
+        <section class="learning-header">
+
+            <span class="tag">
+                MOBILE VIDEO EDITING
+            </span>
+
+            <h1 class="img">
+                <img src="Capcut-pc.jpg"> CapCut Mobile
+            </h1>
+
+            <p>
+                Learn CapCut Mobile from beginner to advanced.
+                Follow the lessons in order, practice each technique,
+                and build your editing skills step by step.
+            </p>
+
+        </section>
+
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-box">
+
+            <div class="progress-top">
+
+                <strong>
+                    Your Progress
+                </strong>
+
+                <span id="progressText">
+                    0%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill" id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BEGINNER LESSONS -->
+
+        <section class="lesson-section">
+
+            <h2 class="img">
+                <img src="biggner.jfif"> Beginner Lessons
+            </h2>
+            <p class="section-description">
+                Learn the basic tools and workflow of
+                CapCut Mobile.
+            </p>
+
+            <div class="lesson-grid">
+
+
+                <!-- LESSON 1 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/q0LzhdCpLi8?si=KKB7Q8O6bhtsoyTa"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 01
+                        </span>
+
+                        <h3>
+                            Introduction to CapCut
+                        </h3>
+
+                        <p>
+                            Learn the CapCut interface,
+                            tools and basic settings.
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LESSON 2 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/RH9f2w2ItEQ?si=Llb2t27mkXVU7djc"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 02
+                        </span>
+
+                        <h3>
+                            How to Cut & trim
+                        </h3>
+
+                        <p>
+                            Learn cutting, trimming,
+                            splitting and deleting clips.
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LESSON 3 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/KVws1GVHoA0?si=EK80EJMoOo8qIhQh"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 03
+                        </span>
+
+                        <h3>
+                            How to use Effects
+                        </h3>
+
+                        <p>
+                            Learn how to use effect.
+
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LESSON 4 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Uz7tntzjbl8?si=gikhZqVtAv0M21qK"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 04
+                        </span>
+
+                        <h3>
+                            Transitions
+                        </h3>
+
+                        <p>
+                            Learn how to create smooth
+                            transitions between clips.
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LESSON 5 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/Rtrdm7E8z04?si=sjzgmWiPNgXs9AyQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 05
+                        </span>
+
+                        <h3>
+                            Text & Titles
+                        </h3>
+
+                        <p>
+                            Add text, titles, captions
+                            and animated typography.
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LESSON 6 -->
+
+                <div class="lesson-card">
+
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/zOTmSUlOEO0?si=UXkyvA7Qp4KVrrBa"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                    <div class="lesson-info">
+
+                        <span class="lesson-number">
+                            LESSON 06
+                        </span>
+
+                        <h3>
+                            Music & Audio
+                        </h3>
+
+                        <p>
+                            Learn music, sound effects,
+                            volume and audio controls.
+                        </p>
+
+                        <button class="lesson-btn" onclick="completeLesson(this)">
+
+                            Mark as Complete ✓
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- INTERMEDIATE LESSONS -->
+        <!-- ========================= -->
+
+        <section class="lesson-section">
+
+            <h2 class="img">
+                <img src="intermidate.jfif"> Intermediate Lessons
+            </h2>
+
+            <p class="section-description">
+                Move beyond the basics and learn powerful CapCut editing techniques.
+            </p>
+
+            <div class="lesson-grid">
+
+                <!-- LESSON 07 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/CnsV1THpAvM?si=qAyi5U__dCWg6dy3"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 07</span>
+                        <h3>Speed Change</h3>
+                        <p>Learn slow motion, fast motion, speed curves and smooth speed changes.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 08 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/2UvMg506rhE?si=0XNT_diXycVNPkoE"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 08</span>
+                        <h3>Keyframing</h3>
+                        <p>Animate position, scale, rotation and other properties using keyframes.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+                <!-- LESSON 10 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/_bp0eGHjPhs?si=WLOi-zDZMQbuyq0r"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 10</span>
+                        <h3>Motion Effects</h3>
+                        <p>Create dynamic movement with animation, zooms and motion effects.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ========================= -->
+        <!-- ADVANCED LESSONS -->
+        <!-- ========================= -->
+
+        <section class="lesson-section">
+
+            <h2 class="img">
+                <img src="advance.png"> Advanced Lessons
+            </h2>
+
+            <p class="section-description">
+                Master advanced tools and create professional-looking videos.
+            </p>
+
+            <div class="lesson-grid">
+
+                <!-- LESSON 11 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/nhQAEiEFT2M?si=ATBmVk-pIYOzOUDa"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 11</span>
+                        <h3>🟢 Green Screen</h3>
+                        <p>Learn chroma key, remove green backgrounds and replace them with custom backgrounds.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 12 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/UGWIne2tsU4?si=nbbXTlZJkD_GJvCN"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 12</span>
+                        <h3>📝 Auto Captions</h3>
+                        <p>Generate automatic captions and customize fonts, colors, timing and caption animations.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 15 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/dK504fpSDNs?si=AhIDKjjFdhv-zAIp"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 15</span>
+                        <h3>🎨 Color Grading</h3>
+                        <p>Learn exposure, contrast, highlights, shadows, saturation and professional color looks.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 16 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/naZzX9nt_1I?si=keDtO8px3PwoZaRb"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 16</span>
+                        <h3>🎯 Motion Tracking</h3>
+                        <p>Track moving subjects and attach text, graphics or effects to the movement.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 17 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/_vvZXkz2XVE?si=qVmXVenCRhENmUSu"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 17</span>
+                        <h3>✨ Advanced Effects</h3>
+                        <p>Combine overlays, effects and animations to create more professional edits.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+                <!-- LESSON 18 -->
+                <div class="lesson-card">
+                    <div class="video-container">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/LTXpNz_ymrs?si=GUYEJKmZwZkaeoUJ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="lesson-info">
+                        <span class="lesson-number">LESSON 18</span>
+                        <h3>🏆 Final Project</h3>
+                        <p>Create a complete professional video using the techniques from the full course.</p>
+                        <button class="lesson-btn" onclick="completeLesson(this)">Mark as Complete ✓</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <h3>
+            🎬 EditMaster
+        </h3>
+
+        <p>
+            Learn. Practice. Create.
+        </p>
+
+    </footer>
+
+
+
+    <script>
+
+        const totalLessons = 18;
+        let completedLessons = 0;
+
+        function completeLesson(button) {
+
+            if (button.disabled) {
+                return;
+            }
+
+            button.innerText = "Completed ✓";
+            button.style.background = "#26324f";
+            button.disabled = true;
+
+            completedLessons++;
+            updateProgress();
+        }
+
+        function updateProgress() {
+
+            const percentage = Math.round(
+                (completedLessons / totalLessons) * 100
+            );
+
+            document.getElementById("progressText").innerText =
+                percentage + "%";
+
+            document.getElementById("progressFill").style.width =
+                percentage + "%";
+        }
+
+    </script>
+
+    <aside class="download-popup" aria-label="Download CapCut Mobile">
+        <button class="download-close" type="button" aria-label="Dismiss download panel" onclick="this.closest('.download-popup').remove()">×</button>
+        <div class="download-icon" aria-hidden="true"><img src="Capcut-pc.jpg" alt=""></div>
+        <div class="download-content">
+            <h3>Do you have CapCut Mobile?</h3>
+            <p>Get CapCut for your phone from its official download guide.</p>
+            <a href="https://capcut.en.softonic.com/" target="_blank" rel="noopener noreferrer" class="download-btn">↓ Download CapCut</a>
+        </div>
+    </aside>
+
+    <script src="api-client.js"></script>
+    <script src="course-tools.js"></script>
+    <script src="site-footer.js"></script>
+</body>
+
+</html>

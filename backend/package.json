@@ -1,0 +1,12 @@
+{
+  "name": "editmaster-learning-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for the EditMaster video editing learning platform",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
