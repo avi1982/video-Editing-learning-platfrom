@@ -8,6 +8,8 @@ Install Node.js 18 or newer, open a terminal in the `backend/` folder, run `npm 
 
 Set `PORT` to change the port. Set `NODE_ENV=production` behind HTTPS to enable the Secure session cookie. For a public deployment, use HTTPS and a durable private data volume; this lightweight JSON store is intended for a small single-server deployment.
 
+The included Render Blueprint uses the free web-service plan, whose filesystem is ephemeral. Data in `backend/data/db.json` can be lost on restarts or redeploys; the Blueprint does not configure durable storage.
+
 ## API
 
 - `GET /api/health` — health status
